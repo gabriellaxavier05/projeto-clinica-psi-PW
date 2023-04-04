@@ -1,0 +1,553 @@
+/* importando a fonte Poppins e seus estilos do Google Fonts: */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap');
+
+/* resentando as margens */
+* {
+    margin: 0; /* espaçamento externo */
+    padding: 0; /*espaçamento interno */
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* estilização do cabeçalho */
+header{ 
+    background-color: #48cae4;
+}
+
+li{
+    /* tirando o círculo da lista */
+    list-style: none;
+    color: #fff;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar{
+    min-height: 70px; /* altura mínima */
+    display: flex; /* pra ficar um do lado do outro */
+    align-items: center;
+    justify-content: space-between; /* colocando na lateral */
+    padding: 0 30px; /* 0 em cima e em baixo, 34px nas laterais (esquerda e direita) */
+}
+
+.nav-itens{
+    text-transform: uppercase;
+}
+
+.logo{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.nav-menu{
+    display: flex; /* pra ficar um do lado do outro */
+    align-items: center;
+    gap: 60px; /* espaçamento entre itens */
+}
+
+.nav-link{
+    transition: 0.5s ease;
+}
+
+.nav-link:hover{
+    color: #023e8a /* trocando a cor ao passar o mouse por cima */
+}
+
+.h{
+    display: none;
+    cursor: pointer; /* aparecer a mãozinha quando o mouse passar em cima */ 
+}
+
+.b{
+    display: block; /* pra ficar um embaixo do outro */
+    width: 28px;
+    height: 3px;
+    border-radius: 2px; /* borda arredondada */
+    margin: 5px auto; /* pra separar */
+    background: #fff;
+    transition: all 0.3s ease-in-out; /* transição em câmera lenta */
+}
+
+/* responsividade */
+@media (max-width:768px){
+    .h{ /* ícone */ 
+        display: block;
+    }
+    h.active .b:nth-child(2){ /* filho 2 */
+        opacity: 0;
+    }
+    h.active .b:nth-child(1){ /* filho 1 */
+        transform: translateY(8px) rotate(45deg);
+    }
+    h.active .b:nth-child(1){ /* filho 3 */
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu{
+        position: fixed;
+        left: -100%; /* pra tudo ir à esquerda */ 
+        top: 70px; /* separa; não deixa grudado */
+        gap: 0;
+        border-radius: 0 0 20px 20px;
+        background-color: #48cae4;
+        text-align: center;
+        flex-direction: column; /* deixa em coluna, um embaixo do outro */ 
+        width: 100%;
+        transition: 0.3s;
+    }
+    .nav-itens{
+        margin: 16px 0; /* o 0 é para laterais */
+    }
+    .nav-menu.active{
+        left: 0;
+    }
+}
+
+
+/* conteúdo da home - index */
+.conteudo{
+    padding-top: 8%;
+    padding-bottom: 15%;
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-top: 0px;
+}
+
+.t{ /*h1 da index */
+    font-weight: bold;
+    font-size: 60px;
+    color: #03045e;
+}
+
+
+/* estilizando o footer */
+.lf{
+    color: #fff;
+}
+
+footer{
+    background-color: #ade8f4;
+    padding: 50px 0px 0;
+}
+
+.container-footer{
+    max-width: 1400px;
+    padding: 0 4%;
+    margin: auto;
+}
+
+.row-footer{
+    display: flex; /* pra fica um do lado outro */
+    flex-wrap: wrap;
+}
+
+.footer-col{
+    width: 25%;
+    padding: 0 15px 40px;
+}
+
+/* alterando o h4 do footer-col */
+.footer-col h4{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+    color: #023e8a;
+}
+
+/* alterando a lista do footer-col */
+.footer-col ul{
+    list-style: none;
+}
+
+/* alterando o li do ul (lista) do footer-col */
+.footer-col ul li{
+    margin: 10px 0;
+}
+
+/* alterando os links do li do ul (lista) do footer-col */
+.footer-col a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: black;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+/* efeitos p/ quando passar o mouse em cima */
+.footer-col a:hover{
+    color: #023e8a;
+    padding-left: 10px;
+}
+
+/* personalizando a coluna das mídias sociais */
+.footer-col .medias-sociais{
+    margin-top: 30px;
+}
+
+/* mexendo na âncora das mídias sociais */
+.footer-col .medias-sociais a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    margin: 0 10px 10px 0;
+    text-decoration: none;
+    border-radius: 50%;
+    color: #023e8a;
+    border: 1px solid #023e8a;
+    transition: all 0.5s ease;
+}
+
+/* persolnalizando os ícones da coluna 4 do footer */
+.footer-col .medias-sociais a i{
+    font-size: 20px;
+}
+
+.footer-col .medias-sociais a:hover{
+    color: white;
+    background-color: #023e8a;
+}
+
+/* deixando o footer (rodapé) responsivo) */
+@media (max-width:800px){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width:600px){
+    .footer-col{
+        width: 100%;
+    }
+}
+
+/* mexendo no copyright do footer */
+#footer_copyright{
+    display: flex;
+    justify-content: center;
+    background-color: #48cae4;
+    font-size: 0.9rem;
+    padding: 1.5rem;
+    font-weight: 100;
+}
+/* fim da personalização da Index */
+
+
+/* personalizando a tela de "Quem Somos" (1) */
+.tqs{
+    font-weight: bold;
+    font-size: 60px;
+    color: #03045e;
+    text-align: center;
+}
+
+.p1{
+    font-size: 20px;
+    justify-content: center;
+    padding-left: 90px;
+    padding-right: 90px;
+    text-align: justify;
+}
+
+.h3qs{
+    font-weight: bold;
+    font-size: 35px;
+    color: #03045e;
+    text-align: center;
+}
+/* fim da personalização 1 da tela "Quem Somos" */
+
+
+/* personalizando o modal */
+button{
+    padding: 0.6rem 1.2rem;
+    background-color: #888;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    opacity: 0.9;
+    font-size: 1rem;
+    transition: 0.4s;
+}
+
+#open-modal{
+    background-color: #023e8a;
+    font-size: 30px;
+}
+
+button:hover{
+    opacity: 1;
+}
+
+#fade, #modal{
+    transition: .5s;
+    opacity: 1;
+    pointer-events: all;
+}
+
+#fade{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.6);
+    z-index: 5;
+}
+
+#modal{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* pra centralizar o modal */
+    background-color: #fff;
+    z-index: 10;
+    width: 800px;
+    height: 500px;
+    max-width: 90%;
+    padding: 1.2rem;
+    border-radius: .5rem;
+}
+
+.modal-header{
+    display: flex; /* pra ficar um do lado do outro */
+    justify-content: space-between;
+    align-items: center;
+    /* criando a divisória entre o cabeçalho do modal e o corpo dele */
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 15px;
+}
+
+#fade.hide, #modal.hide{
+    opacity: 0;
+    pointer-events: none;
+}
+
+#modal.hide{
+    top: 0;
+
+}
+
+.btn-x{
+    font-weight: bold;
+}
+
+/* form do modal */
+.login-form-modal{
+
+}
+
+/* fim personalização do modal da tela inicial /*
+
+
+/* personalizando as imagens da tela "Quem somos" */
+#img-p1{
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    max-height: 550px;
+    /* evitando a distorção */ 
+    object-fit: cover;
+    object-position: bottom;
+    margin-top: 75px;
+    border-radius: 50px;
+}
+
+#img-p2{
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    max-height: 575px;
+    /* evitando a distorção */ 
+    object-fit: cover;
+    object-position: bottom;
+    margin-top: 75px;
+    border-radius: 50px;
+}
+
+.img-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px; /* distância entre uma imagem e outra */
+    width: 100%;
+    height: 70%;
+    flex-wrap: wrap;
+}
+
+/* configurando as divs das imgs da tela "Quem somos" */
+#img-1, #img-2{
+    display: inline-block;
+    text-align: center;
+}
+
+.h4p{
+    color: #00b4d8;
+    font-weight: 600;
+    margin-top: 30px;
+}
+/* término personalização da tela "Quem somos" */ 
+
+
+/* personalizando as imgs da página "Unidades" */
+#mapa-1, #mapa-2{
+    display: inline-block;
+    text-align: center;
+}
+
+.m{
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    max-height: 300px;
+    /* evitando a distorção */ 
+    object-fit: cover;
+    object-position: bottom;
+    margin-top: 70px;
+    border-radius: 30px;
+}
+
+
+/* personalizando a lista de convênios da tela "Convênios" */
+.ul-c{
+    justify-content: center;
+    padding-left: 22%;
+    padding-right: 22%;
+    text-align: justify;
+}
+
+.ul-c li{
+    color: black;
+    list-style-type: disc;
+}
+
+.conteudo-2{
+    padding-top: 8%;
+    padding-bottom: 15%;
+    padding-left: 22%;
+    padding-right: 22%;
+    margin-top: 0px;
+}
+
+
+/* personalizando a tela de login */
+.login{
+    height: 100vh;
+    /*background: linear-gradient(120deg, #0096c7, #48cae4);*/
+    background: #e7ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.login_container{
+    min-height: 400px;
+    width: 500px;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 32px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 5px 5px 15px #adb5bd;
+}
+
+.login_title{
+    margin-bottom: 32px;
+    color: #03045e;
+    font-weight: 300;
+}
+
+.login-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.5px; 
+}
+
+.login_input{
+    height: 48px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 8px;
+    border: unset;
+    outline: none;
+}
+
+.login_input-border{
+    height: 0.5px;
+    width: 100%;
+    margin-bottom: 16px;
+    background-color: #ced4da;
+    transition: 0.3s ease;
+}
+
+/* efeito depois que... */
+.login_input-border::after{
+    content: '';
+    display: block;
+    height: 1px;
+    width: 0;
+    margin-bottom: 16px;
+    background: linear-gradient(120deg, #0096c7, #48cae4);
+    transition: 0.3s ease-in-out;
+}
+
+.login_submit{
+    height: 48px;
+    width: 100%;
+    outline: none;
+    background: linear-gradient(120deg, #0096c7, #48cae4, #0096c7);
+    background-size: 200%;
+    margin-bottom: 32px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: unset;
+    margin-top: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.login_reset{
+    font-size: 12.5px;
+    color: #6c757d;
+    text-decoration: none;
+}
+/* término da personalização da página de login */
+
+
+/* personalização 2 do conteúdo do modal */
+.h4_lm{
+    text-align: center;
+    margin-bottom: 32px;
+    color: #03045e;
+    font-weight: 300;
+    padding-top: 15px;
+}
+
+.login-form-modal{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.5px;
+    margin-left: 100px;
+    margin-right: 90px;
+}
+
