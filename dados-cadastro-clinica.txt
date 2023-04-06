@@ -1,0 +1,37 @@
+perfis do sistema:
+1- Administrador:
+	- detém controle sobre os funcionários (recepcionistas e psicólogos), pacientes e agendamentos
+2- Func. recepcionista: cadastra pacientes e agendamentos
+3- Func. psicólogo: registra apenas sua disponibilidade de horários e recebe/acompanha notificações de agendamentos
+
+
+Dados para cadastro:
+
+tbFuncionario:
+- codFunc PK
+- nomeFunc
+- dataNascFunc
+- rgFunc
+- cpfFunc
+- cargoFunc
+- dataAdmissaoFunc
+- telefoneFunc
+- emailFunc
+
+tbPaciente
+- codPaciente PK
+- nomePac
+- dataNascPac
+- rgPac
+- cpfPac
+- telPac
+- emailPac
+- tipoPac
+
+tbConnsulta
+- codConsulta PK
+- codFunc FK
+- codPaciente FK
+- dataConsulta
+- horarioConsulta
+- duracaoConsulta
