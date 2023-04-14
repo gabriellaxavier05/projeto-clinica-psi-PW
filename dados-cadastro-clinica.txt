@@ -18,6 +18,11 @@ tbFuncionario:
 - telefoneFunc
 - emailFunc
 
+tbPsicologo
+- codPsicologo PK
+- crpPsicologo
+- codFunc FK
+
 tbPaciente
 - codPaciente PK
 - nomePac
@@ -28,10 +33,20 @@ tbPaciente
 - emailPac
 - tipoPac
 
-tbConnsulta
+tbPagamento
+- codPagamento PK
+- tipoPagamento
+
+tbConsulta
 - codConsulta PK
-- codFunc FK
+- codPsicologo FK
 - codPaciente FK
 - dataConsulta
 - horarioConsulta
 - duracaoConsulta
+- valorConsulta 
+
+tbPagamento
+- codPagamento PK
+- tipoPagamento
+- codConsulta FK
