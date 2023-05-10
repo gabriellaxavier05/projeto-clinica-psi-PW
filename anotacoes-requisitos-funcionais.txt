@@ -1,0 +1,9 @@
+Requisitos funcionais do sistema: 
+
+1- Criar página inicial do sistema
+2- Criar página de login
+3- Criar página de cadastro
+4- Manter funcionários
+5- Manter pacientes
+6- Manter consultas
+7- Manter métodos de pagamentos
